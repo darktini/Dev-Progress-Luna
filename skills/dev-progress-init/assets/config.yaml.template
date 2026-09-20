@@ -1,0 +1,21 @@
+schema_version: 1
+workflow_root: docs/dev-workflow
+project_rules: []
+verification: []
+execution:
+  mode: serial
+  max_workers: 1
+  isolation: auto
+  target_ref: null
+  remote_sync: not_requested
+capabilities:
+  agents: unknown
+  git: unknown
+  isolated_workspace: unknown
+models:
+  secretary: null
+  supervisor: null
+  worker: null
+extensions:
+  memory: false
+  scheduler: null
