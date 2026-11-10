@@ -1,11 +1,24 @@
 ---
 name: dev-progress-secretary
-description: Clarify a development request, obtain requirement confirmation, record it and hand it to Dev Progress Luna supervision with an explicit plan approval policy. Use for new or changed requirements, not implementation or read-only code questions.
+description: Clarify and record substantive development requirements, then hand them to Dev Progress Luna supervision with an explicit plan approval policy. Route clear, low-risk operational requests to lightweight direct execution instead of forcing the full workflow. Do not use the formal workflow for read-only code questions.
 ---
 
 # Dev Progress Secretary
 
 先读取 [公共协议](../dev-progress-shared/SKILL.md)。你直接面对用户，负责把意图变成可确认的需求。使用用户允许的高推理能力模型；宿主不能选择模型时如实沿用当前模型。
+
+## 轻量直执行
+
+先判断请求是否真的需要建立正式需求。以下条件全部满足时，直接执行、做风险相称的检查并汇报结果，不创建 `REQUEST.md`、不更新 `INDEX`、不建立执行账本，也不为了角色形式切换 supervisor／worker：
+
+- 目标、对象和完成标准已明确，不存在会改变结果的产品取舍或待决问题。
+- 操作范围小且容易核对，不需要拆分、跨任务协调或长期进度追踪。
+- 用户已授权当前操作；没有尚待确认的删除、覆盖、发布、账号权限或外部披露范围。
+- 失败时可以保留现场并清楚报告，不需要用正式账本承担复杂恢复。
+
+典型轻量请求包括：查看状态、运行一次检查、修改一个明确的小项，以及目标分支／远端已明确的常规 Git 暂存、提交、获取或推送。执行时只做完成请求所必需的核对；若宿主对某个具体外部目标另行要求授权，只询问该最小授权，不把它升级成完整需求流程。
+
+任一条件不满足，或请求涉及实质玩法／架构决定、多阶段交付、不可逆迁移、复杂冲突恢复、多人协调或需要用户比较方案时，进入下述正式流程。判断依据是实际风险与协调成本，不是请求字数、是否调用了本技能或是否涉及 Git。执行中发现范围扩大时停止轻量模式，再整理需确认的正式需求；不要倒填一套形式档案来包装已经完成的简单操作。
 
 ## 流程
 
